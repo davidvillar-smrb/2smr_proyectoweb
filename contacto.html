@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Al-Ándalus | Contacto</title>
+    <link rel="icon" href="img/logo academia.png"> <!-- Favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Estilos.css"><!-- Conecta el archivo CSS -->
+</head>
+<body>
+    <header class="mi_header header_cursos">
+        <nav class="mi_menu mi_contenedor">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo academia.png" alt="Logo academia"></a>
+            </div>
+            <nav class="menu_nav">
+                <a href="index.html">Inicio</a> <!-- Navegación interna a las paginas de la web -->
+                <a href="servicios.html">Cursos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="menu_social">
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="Instagram"></a> <!-- Abre la app en una pestaña nueva -->
+                <a href="https://www.youtube.com/" target="_blank"><img src="img/youtube.svg" alt="Youtube"></a>
+            </div>
+        </nav>
+                <section class="header_container mi_contenedor animado">
+			<h1 class="header_title">Aprende Inglés y Francés</h1>
+			<p class="header_paragraph">Domina un nuevo idioma con nuestros profesores. El éxito bilingüe empieza hoy.</p>
+			<a href="servicios.html" class="cta">Ver Cursos</a> <!-- Botón que dirige a la página de cursos -->
+		</section>
+    </header>
+
+    <main class="mi_contenedor">
+        <h1 class="titulo_paginas">Contacta con nosotros</h1>
+
+        <section class="section_formulario" id="contenedor-formulario">
+            
+            <form action="#" method="post" class="mi_form" onsubmit="enviarFormulario(event)"> <!-- Ejecuta función JS al enviar -->
+                
+                <div class="campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required> <!-- Campo obligatorio -->
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required> <!-- Valida formato de email automáticamente -->
+                </div>
+
+                <div class="campo">
+                    <label for="tel">Teléfono:</label>
+                    <input type="tel" id="tel" name="tel"> <!-- Campo opcional -->
+                </div>
+
+                <div class="campo">
+                    <label for="interes">¿Qué curso te interesa?</label>
+                    <select name="interes" id="interes"> <!-- Lista desplegable -->
+                        <option value="ingles">Inglés</option>
+                        <option value="frances">Francés</option>
+                        <option value="online">Modalidad Online</option>
+                    </select>    
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Cuéntanos qué necesitas:</label>
+                    <textarea name="mensaje" id="mensaje" rows="5"></textarea> <!-- Permite texto más largo -->
+                </div>
+
+                <div class="campo campo-checkbox">
+                    <label for="politica" class="label-bloque">Acepto la política de privacidad</label>
+                    <input type="checkbox" id="politica" name="politica" required> <!-- Obliga a aceptar antes de enviar -->
+                </div>
+
+                <button type="submit" class="cta">Enviar solicitud</button> <!-- Envía el formulario -->
+            </form>
+        </section>
+    </main>
+
+    <footer class="mi_footer">
+        <div class="mi_contenedor">
+            <p>&copy; 2026 David Villar Loaisa - Estudiante de SMR</p> <!-- Texto del footer -->
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Conecta con el archivo script.js -->
+</body>
+</html>

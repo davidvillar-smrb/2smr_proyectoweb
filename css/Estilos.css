@@ -1,0 +1,296 @@
+/* 1. VARIABLES */
+:root {
+    --principal: #0f172a;    /* Azul noche profundo */
+    --secundario: #1e293b;   /* Azul intermedio */
+    --acento: #38bdf8;       /* Cyan para detalles y hover */
+    --azul-boton: #2563eb;   /* Azul para botones redondos */
+    --blanco: #ffffff;
+    --gris-fondo: #f1f5f9;   /* Fondo general de la web*/
+    --fuente: 'Montserrat', sans-serif; /* Google Fonts */
+}
+
+/* Elimina márgenes y paddings por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--gris-fondo);
+    color: var(--principal);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll lateral */
+}
+
+.mi_contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mi_header {
+    width: 100%;
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8)), 
+                url('../img/fondo-academia.jpg') center/cover no-repeat;
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reduce altura del header en páginas secundarias */
+.header_cursos, .mi_header:not(:has(.header_title)) {
+    min-height: 120px;
+}
+
+.mi_menu {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre logo, menú y redes */
+    align-items: center;
+    height: 100px;
+}
+
+/* Logo con animación al pasar el ratón */
+.logo img {
+    width: 70px;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Enlaces de navegación */
+.menu_nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el ratón */
+.menu_nav a:hover {
+    color: var(--acento);
+}
+
+/* Iconos redes sociales */
+.menu_social img {
+    width: 25px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.menu_social img:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+}
+
+.header_container {
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header_title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Se adapta a pantalla */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.header_paragraph {
+    font-size: 1.2rem;
+    max-width: 650px;  /* Evita líneas demasiado largas */
+    margin-bottom: 30px;
+}
+
+.tabla-idiomas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 80px 0; /*Margen de 80 px superior e inferior*/
+}
+
+/* Tarjetas individuales */
+.card {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efecto flotante */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta imagen sin deformar */
+    border-radius: 15px;
+    margin-bottom: 20px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 30px;
+    background-color: var(--azul-boton); /*Color de fondo*/
+    color: white; 
+    text-decoration: none; /* Quita el subrayado del enlace */
+    border-radius: 50px; /* Forma de botón redondeado */
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-link:hover {
+    background-color: var(--principal);
+    transform: scale(1.05); /* Efecto de agrandado al pasar el ratón */
+}
+
+.section_valores {
+    padding: 80px 0; /*Margen de 80 px superior e inferior*/
+    text-align: center;
+}
+
+.grid_valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px; /* Espaciado de 40px entre elementos */
+}
+
+.valor_item {
+    background: var(--blanco);
+    padding: 40px 20px;
+    border-radius: 20px; /* Bordes suaves tipo tarjeta */
+}
+
+.titulo_paginas {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 2.5rem;
+}
+
+.servicio_item {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 10px solid var(--acento);
+    margin-bottom: 30px;
+}
+
+.section_formulario {
+    max-width: 600px; /* Limita el ancho del formulario */
+    margin: 0 auto 80px auto; /* Centrado horizontal y separación inferior */
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1); /* Sombra para efecto de tarjeta */
+}
+
+.mi_form .campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Estilo para inputs de texto, email, etc.*/
+.campo input, .campo select, .campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: var(--fuente);
+}
+
+/* Ajuste manual para que los cuadritos de check no midan el 100% */
+.campo input[type="checkbox"], .campo input[type="radio"] {
+    width: auto; /* Evita que ocupen todo el ancho */
+    margin-right: 10px;
+}
+
+.campo input:focus {
+    border-color: var(--acento);
+    outline: none;
+}
+
+/* Estilo específico para Checkbox alineado con texto */
+.campo input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.campo .label-inline {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.cta {
+    display: inline-block;
+    background: var(--acento);
+    color: var(--principal);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: var(--principal);
+    color: white;
+}
+
+.mi_footer {
+    background: var(--principal);
+    color: var(--blanco);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.animado {
+    animation: aparecer 1s ease-out forwards; /* Aplica animación de entrada */
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); } /* Empieza invisible y abajo */
+    to { opacity: 1; transform: translateY(0); }  /* Termina visible en posición normal */
+}
+
+/*Media queries. Adaptar a los diferentes tamaños de las pantallas (móvil, tablet)*/
+@media (max-width: 992px) { /* Reduce tamaño en tablets */
+    .header_title { font-size: 2.8rem; }
+}
+
+@media (max-width: 600px) { /* Cambia menú a vertical en móvil */
+    .mi_menu {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .menu_nav {
+        margin: 15px 0;
+    }
+    /* Grid en una sola columna */
+    .tabla-idiomas, .grid_valores {
+        grid-template-columns: 1fr; /* Todo en una sola columna */
+    }
+    .header_title { font-size: 2rem; }
+    .mi_header { min-height: 80vh; } /* Reduce altura del header en móvil */
+}
